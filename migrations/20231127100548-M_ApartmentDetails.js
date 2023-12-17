@@ -10,7 +10,7 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     await queryInterface.createTable("ApartmentDetails",{
-      id:{
+      apartmentDetailsid:{
           type:Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement:true
@@ -36,7 +36,7 @@ module.exports = {
           allowNull:false,
           references:{
               model: 'Residents',
-              key: 'id'
+              key: 'residentId'
           }
       },
       tenantId:{
@@ -44,7 +44,7 @@ module.exports = {
           allowNull:false,
           references:{
               model: 'Residents',
-              key: 'id'
+              key: 'residentId'
           }
       },
       createdAt:{
@@ -61,7 +61,7 @@ module.exports = {
         uniqueKeys: {
             unique_tag: {
                 customIndex: true,
-                fields: ["id"]
+                fields: ["apartmentDetailsId"]
             }
         }
     },

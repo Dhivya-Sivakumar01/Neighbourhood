@@ -10,7 +10,7 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     await queryInterface.createTable("ExpenseHistory",{
-      id:{
+      expenseId:{
           type:Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement:true
@@ -18,7 +18,8 @@ module.exports = {
       maintenanceId:{
           type:Sequelize.INTEGER,
           references:{
-              model:'MaintenanceHistory'
+              model:'MaintenanceHistory',
+              key:'maintenanceId'
           }
       },
       categoryId:{
@@ -29,7 +30,7 @@ module.exports = {
           }
       },
       amount:{
-          type:Sequelize.DECIMAL(5,2)
+          type:Sequelize.DECIMAL(10,2)
       },
       createdAt:{
           type: Sequelize.DATE
@@ -45,7 +46,7 @@ module.exports = {
         uniqueKeys: {
             unique_tag: {
                 customIndex: true,
-                fields: ["id"]
+                fields: ["expenseId"]
             }
         }
     },
@@ -62,6 +63,6 @@ module.exports = {
      * Example:
      * await queryInterface.dropTable('users');
      */
-    await queryInterface.dropTable('MaintenanceHistory')
+    await queryInterface.dropTable('ExpenseHistory')
   }
 };

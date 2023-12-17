@@ -10,7 +10,7 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     await queryInterface.createTable("Messages",{
-      id:{
+      messageId:{
           type:Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement:true
@@ -20,7 +20,7 @@ module.exports = {
           type:Sequelize.STRING
       },
       image:{
-          allowNull:false,
+          allowNull:true,
           type:Sequelize.BLOB
       },
       description:{
@@ -31,18 +31,20 @@ module.exports = {
           allowNull:false,
           type:Sequelize.INTEGER,
           references:{
-              model:'Residents'
+              model:'Residents',
+              key:'residentId'
           }
       },
       type:{
           allowNull:false,
           type:Sequelize.ENUM("Announcement","Feedback","Post")
       },
-      messageId:{
+      replyId:{
           allowNull:true,
           type:Sequelize.INTEGER,
           references:{
-              model:'Messages'
+              model:'Messages',
+              key:"messageId"
           }
       },
       createdAt:{
@@ -60,7 +62,7 @@ module.exports = {
         uniqueKeys: {
             unique_tag: {
                 customIndex: true,
-                fields: ["id"]
+                fields: ["messageId"]
             }
         }
     },

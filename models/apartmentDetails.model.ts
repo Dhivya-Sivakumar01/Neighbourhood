@@ -8,7 +8,7 @@ export class ApartmentDetails extends Model{
     @PrimaryKey
     @AutoIncrement
     @Column
-    id:number
+    apartmentDetailsId:number
 
     @Column
     @HasMany(()=> Apartment,{foreignKey: {name:'apartmentId'}, sourceKey: 'apartmentId', as: 'Apartment'})

@@ -1,5 +1,5 @@
 export enum MessageType{
-    "Announcement",
-    "Feedback",
-    "Post"
+    Announcement = "Announcement",
+    Feedback = "Feedback",
+    Post = "Post"
 }

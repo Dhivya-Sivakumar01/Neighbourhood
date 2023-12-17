@@ -24,6 +24,12 @@ module.exports = {
           type:"Owner",
           isOfficeBearer:0,
           createdAt:'2023-11-26 20:32:50',
+      },
+      {
+        residentName: "Ram K",
+        type:"Owner",
+        isOfficeBearer:1,
+        createdAt:'2023-11-26 20:32:50',
       }
      ], {});
   },

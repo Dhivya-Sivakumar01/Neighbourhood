@@ -1,6 +1,5 @@
-import { AutoIncrement, Column, HasMany,DataType, Model, PrimaryKey, Table } from "sequelize-typescript";
+import { AutoIncrement, Column, HasMany,DataType, Model, PrimaryKey, Table, HasOne } from "sequelize-typescript";
 import { Residents } from "./residents.model";
-import { Apartment } from "./apartment.model";
 import { ApartmentDetails } from "./apartmentDetails.model";
 
 
@@ -11,15 +10,15 @@ export class PaymentDetails extends Model{
     @Column(DataType.INTEGER)
     @PrimaryKey
     @AutoIncrement
-    id: number
+    paymentId: number
 
     @Column(DataType.INTEGER)
-    @HasMany(()=> Residents,{foreignKey: {name:'id'}, sourceKey: 'residentId', as: 'OneToManyResident'})
+    @HasMany(()=> Residents,{foreignKey: {name:'residentId'}, sourceKey: 'residentId', as: 'OneToOneResident'})
     residentId:number;
 
     @Column(DataType.STRING)
-    @HasMany(()=> ApartmentDetails,{foreignKey:{name:'id'}, sourceKey: 'apartmentId', as: 'OneToManyApartment'})
-    apartmentId:string;
+    @HasMany(()=> ApartmentDetails,{foreignKey:{name:'apartmentDetailsId'}, sourceKey: 'apartmentDetailsId', as: 'OneToManyApartment'})
+    apartmentDetailsId:string;
 
     @Column(DataType.DATE)
     paymentDate: Date;

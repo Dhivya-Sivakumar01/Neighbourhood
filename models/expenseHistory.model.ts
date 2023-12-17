@@ -8,7 +8,7 @@ export class ExpenseHistory extends Model{
    @Column(DataType.INTEGER)
    @PrimaryKey
    @AutoIncrement
-   id: number;
+   expenseId: number;
 
    @Column(DataType.INTEGER)
    @HasMany(()=> MaintenanceHistory,{foreignKey: {name:'id'}, sourceKey: 'maintenanceId', as: 'OneToManyMaintenance'})

@@ -10,7 +10,7 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     await queryInterface.createTable('Residents', {
-      id:{
+      residentId:{
           type: Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true
@@ -42,7 +42,7 @@ module.exports = {
         uniqueKeys: {
             unique_tag: {
                 customIndex: true,
-                fields: ["id","residentName","type"]
+                fields: ["residentId","residentName","type"]
             }
         }
     },

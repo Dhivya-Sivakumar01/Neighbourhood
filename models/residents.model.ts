@@ -6,7 +6,7 @@ export class Residents extends Model{
     @Column
     @PrimaryKey
     @AutoIncrement
-    id: number
+    residentId: number
 
     @Column
     residentName: string

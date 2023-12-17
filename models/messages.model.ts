@@ -1,5 +1,5 @@
 import { MessageType } from "enums/messageType";
-import { AutoIncrement, Column, HasMany,DataType, Model, PrimaryKey, Table, HasOne } from "sequelize-typescript";
+import { AutoIncrement, Column, HasMany,DataType, Model, PrimaryKey, Table, HasOne, AllowNull } from "sequelize-typescript";
 import { Residents } from "./residents.model";
 
 
@@ -9,19 +9,20 @@ export class Messages extends Model{
     @Column(DataType.INTEGER)
     @PrimaryKey
     @AutoIncrement
-    id: number;
+    messageId: number;
 
     @Column(DataType.STRING)
     messageTitle:string;
 
     @Column(DataType.BLOB)
+    @AllowNull
     image:Blob;
 
     @Column(DataType.STRING)
     description:string;
 
     @Column(DataType.STRING)
-    @HasMany(()=> Residents,{foreignKey: {name:'id'}, sourceKey: 'createdBy', as: 'OneToManyResident'})
+    @HasOne(()=> Residents,{foreignKey: {name:'residentId'}, sourceKey: 'createdBy', as: 'OneToOneResident'})
     createdBy:number;
 
     @Column(DataType.DATE)
@@ -32,5 +33,5 @@ export class Messages extends Model{
 
     @Column(DataType.INTEGER)
     @HasMany(()=>Messages,{foreignKey: {name:'id'}, sourceKey: 'messageId', as: 'OneToManyResident'})
-    messageId?: number;
+    replyId?: number;
 }

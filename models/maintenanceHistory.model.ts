@@ -6,7 +6,7 @@ export class MaintenanceHistory extends Model{
    @Column(DataType.INTEGER)
    @PrimaryKey
    @AutoIncrement
-   id: number;
+   maintenanceId: number;
 
    @Column(DataType.DATEONLY)
    month: Date;

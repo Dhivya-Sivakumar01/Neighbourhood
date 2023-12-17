@@ -1,4 +1,4 @@
 export enum ResidentType{
-    "Owner",
-    "Tenant"
+    Owner = "Owner",
+    Tenant = "Tenant"
 }

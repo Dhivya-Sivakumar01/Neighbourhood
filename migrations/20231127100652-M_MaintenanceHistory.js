@@ -10,16 +10,16 @@ module.exports = {
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
     await queryInterface.createTable("MaintenanceHistory",{
-      id:{
+      maintenanceId:{
           type:Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement:true
       },
       month:{
-          type:Sequelize.DATE
+          type:Sequelize.ENUM("January","February","March","April","May","June","July","August","September","October","November","December")
       },
       totalAmount:{
-          type:Sequelize.DECIMAL(5,2)
+          type:Sequelize.DECIMAL(10,2)
       },
       createdAt:{
           type: Sequelize.DATE
@@ -35,7 +35,7 @@ module.exports = {
         uniqueKeys: {
             unique_tag: {
                 customIndex: true,
-                fields: ["id","month"]
+                fields: ["maintenanceId","month"]
             }
         }
     },
