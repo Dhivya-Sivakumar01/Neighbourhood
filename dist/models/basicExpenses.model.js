@@ -15,9 +15,9 @@ let BasicExpenses = class BasicExpenses extends sequelize_typescript_1.Model {
 };
 exports.BasicExpenses = BasicExpenses;
 __decorate([
-    (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
     sequelize_typescript_1.PrimaryKey,
     sequelize_typescript_1.AutoIncrement,
+    (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
     __metadata("design:type", Number)
 ], BasicExpenses.prototype, "categoryId", void 0);
 __decorate([

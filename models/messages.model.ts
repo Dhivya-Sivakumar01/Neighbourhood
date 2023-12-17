@@ -6,16 +6,18 @@ import { Residents } from "./residents.model";
 @Table({tableName: 'Messages', timestamps: true, paranoid:true}) 
 export class Messages extends Model{
     
-    @Column(DataType.INTEGER)
+
     @PrimaryKey
     @AutoIncrement
+    @Column(DataType.INTEGER)
     messageId: number;
 
     @Column(DataType.STRING)
     messageTitle:string;
 
-    @Column(DataType.BLOB)
+  
     @AllowNull
+    @Column(DataType.BLOB)
     image:Blob;
 
     @Column(DataType.STRING)
@@ -32,6 +34,6 @@ export class Messages extends Model{
     type:MessageType;
 
     @Column(DataType.INTEGER)
-    @HasMany(()=>Messages,{foreignKey: {name:'id'}, sourceKey: 'messageId', as: 'OneToManyResident'})
+    @HasMany(()=>Messages,{foreignKey: {name:'messageId'}, sourceKey: 'replyId', as: 'OneToManyResident'})
     replyId?: number;
 }

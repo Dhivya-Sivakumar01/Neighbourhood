@@ -5,9 +5,9 @@ import { MaintenanceHistory } from "./maintenanceHistory.model";
 @Table({tableName: 'ExpenseHistory', timestamps: true, paranoid:true}) 
 export class ExpenseHistory extends Model{
 
-   @Column(DataType.INTEGER)
    @PrimaryKey
    @AutoIncrement
+   @Column(DataType.INTEGER)
    expenseId: number;
 
    @Column(DataType.INTEGER)

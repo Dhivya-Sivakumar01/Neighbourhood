@@ -24,12 +24,12 @@ __decorate([
 ], PaymentDetails.prototype, "paymentId", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
-    (0, sequelize_typescript_1.HasMany)(() => residents_model_1.Residents, { foreignKey: { name: 'residentId' }, sourceKey: 'residentId', as: 'Residents' }),
+    (0, sequelize_typescript_1.HasMany)(() => residents_model_1.Residents, { foreignKey: { name: 'residentId' }, sourceKey: 'residentId', as: 'OneToOneResident' }),
     __metadata("design:type", Number)
 ], PaymentDetails.prototype, "residentId", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.STRING),
-    (0, sequelize_typescript_1.HasMany)(() => apartmentDetails_model_1.ApartmentDetails, { foreignKey: { name: 'id' }, sourceKey: 'apartmentId', as: 'ApartmentDetails' }),
+    (0, sequelize_typescript_1.HasMany)(() => apartmentDetails_model_1.ApartmentDetails, { foreignKey: { name: 'apartmentDetailsId' }, sourceKey: 'apartmentDetailsId', as: 'OneToManyApartment' }),
     __metadata("design:type", String)
 ], PaymentDetails.prototype, "apartmentDetailsId", void 0);
 __decorate([

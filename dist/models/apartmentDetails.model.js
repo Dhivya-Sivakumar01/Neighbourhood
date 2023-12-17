@@ -21,7 +21,7 @@ __decorate([
     sequelize_typescript_1.AutoIncrement,
     sequelize_typescript_1.Column,
     __metadata("design:type", Number)
-], ApartmentDetails.prototype, "id", void 0);
+], ApartmentDetails.prototype, "apartmentDetailsId", void 0);
 __decorate([
     sequelize_typescript_1.Column,
     (0, sequelize_typescript_1.HasMany)(() => apartment_model_1.Apartment, { foreignKey: { name: 'apartmentId' }, sourceKey: 'apartmentId', as: 'Apartment' }),
@@ -37,12 +37,12 @@ __decorate([
 ], ApartmentDetails.prototype, "doorNumber", void 0);
 __decorate([
     sequelize_typescript_1.Column,
-    (0, sequelize_typescript_1.HasMany)(() => residents_model_1.Residents, { foreignKey: { name: 'residentId' }, sourceKey: 'ownerId', as: 'Resident' }),
+    (0, sequelize_typescript_1.HasMany)(() => residents_model_1.Residents, { foreignKey: { name: 'id' }, sourceKey: 'ownerId', as: 'Resident' }),
     __metadata("design:type", Number)
 ], ApartmentDetails.prototype, "ownerId", void 0);
 __decorate([
     sequelize_typescript_1.Column,
-    (0, sequelize_typescript_1.HasMany)(() => residents_model_1.Residents, { foreignKey: { name: 'residentId' }, sourceKey: 'ownerId', as: 'Resident' }),
+    (0, sequelize_typescript_1.HasMany)(() => residents_model_1.Residents, { foreignKey: { name: 'id' }, sourceKey: 'ownerId', as: 'Resident' }),
     __metadata("design:type", Number)
 ], ApartmentDetails.prototype, "tenantId", void 0);
 exports.ApartmentDetails = ApartmentDetails = __decorate([

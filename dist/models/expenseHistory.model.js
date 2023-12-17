@@ -17,19 +17,19 @@ let ExpenseHistory = class ExpenseHistory extends sequelize_typescript_1.Model {
 };
 exports.ExpenseHistory = ExpenseHistory;
 __decorate([
-    (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
     sequelize_typescript_1.PrimaryKey,
     sequelize_typescript_1.AutoIncrement,
+    (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
     __metadata("design:type", Number)
 ], ExpenseHistory.prototype, "expenseId", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
-    (0, sequelize_typescript_1.HasMany)(() => maintenanceHistory_model_1.MaintenanceHistory, { foreignKey: { name: 'maintenanceId' }, sourceKey: 'maintenanceId', as: 'MaintenanceHistory' }),
+    (0, sequelize_typescript_1.HasMany)(() => maintenanceHistory_model_1.MaintenanceHistory, { foreignKey: { name: 'id' }, sourceKey: 'maintenanceId', as: 'OneToManyMaintenance' }),
     __metadata("design:type", Number)
 ], ExpenseHistory.prototype, "maintenanceId", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
-    (0, sequelize_typescript_1.HasMany)(() => basicExpenses_model_1.BasicExpenses, { foreignKey: { name: 'categoryId' }, sourceKey: 'categoryId', as: 'BasicExpenses' }),
+    (0, sequelize_typescript_1.HasMany)(() => basicExpenses_model_1.BasicExpenses, { foreignKey: { name: 'categoryId' }, sourceKey: 'categoryId', as: 'OneToManyCategory' }),
     __metadata("design:type", Number)
 ], ExpenseHistory.prototype, "categoryId", void 0);
 __decorate([

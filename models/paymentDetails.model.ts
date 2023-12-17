@@ -7,9 +7,9 @@ import { ApartmentDetails } from "./apartmentDetails.model";
 @Table({tableName: 'PaymentDetails', timestamps: true, paranoid:true}) //paranoid defines softdelete(isDeleted)
 export class PaymentDetails extends Model{
     
-    @Column(DataType.INTEGER)
     @PrimaryKey
     @AutoIncrement
+    @Column(DataType.INTEGER)
     paymentId: number
 
     @Column(DataType.INTEGER)

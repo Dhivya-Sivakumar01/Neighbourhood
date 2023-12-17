@@ -3,19 +3,20 @@ import { AutoIncrement, Column, Default, Model, PrimaryKey, Table } from "sequel
 
 @Table({tableName: 'Residents', timestamps: true, paranoid:true})
 export class Residents extends Model{
-    @Column
+    
     @PrimaryKey
     @AutoIncrement
+    @Column
     residentId: number
 
     @Column
     residentName: string
 
-    @Column
     @Default(['Owner','Tenant']) //try
+    @Column
     type: ResidentType
 
-    @Column
     @Default(false)
+    @Column
     isOfficeBearer: boolean
 }

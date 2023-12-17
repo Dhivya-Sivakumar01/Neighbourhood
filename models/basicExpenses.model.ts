@@ -3,9 +3,10 @@ import { AutoIncrement, Column, HasMany,DataType, Model, PrimaryKey, Table, HasO
 @Table({tableName: 'BasicExpenses', timestamps: true, paranoid:true}) 
 export class BasicExpenses extends Model{
 
-    @Column(DataType.INTEGER)
+
     @PrimaryKey
     @AutoIncrement
+    @Column(DataType.INTEGER)
     categoryId:number;
 
     @Column(DataType.STRING)

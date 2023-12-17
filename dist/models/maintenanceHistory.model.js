@@ -19,10 +19,10 @@ __decorate([
     sequelize_typescript_1.AutoIncrement,
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
     __metadata("design:type", Number)
-], MaintenanceHistory.prototype, "maintenanceid", void 0);
+], MaintenanceHistory.prototype, "maintenanceId", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.DATEONLY),
-    __metadata("design:type", String)
+    __metadata("design:type", Date)
 ], MaintenanceHistory.prototype, "month", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.DECIMAL(5, 2)),

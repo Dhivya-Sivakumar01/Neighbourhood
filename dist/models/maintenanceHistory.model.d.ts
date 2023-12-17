@@ -1,6 +1,6 @@
 import { Model } from "sequelize-typescript";
 export declare class MaintenanceHistory extends Model {
-    maintenanceid: number;
-    month: String;
+    maintenanceId: number;
+    month: Date;
     totalAmount: number;
 }

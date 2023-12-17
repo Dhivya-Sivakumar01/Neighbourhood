@@ -3,9 +3,10 @@ import { AutoIncrement, Column, DataType, PrimaryKey, Table,Model } from "sequel
 @Table({tableName: 'MaintenanceHistory', timestamps: true, paranoid:true}) 
 export class MaintenanceHistory extends Model{
 
-   @Column(DataType.INTEGER)
+
    @PrimaryKey
    @AutoIncrement
+   @Column(DataType.INTEGER)
    maintenanceId: number;
 
    @Column(DataType.DATEONLY)

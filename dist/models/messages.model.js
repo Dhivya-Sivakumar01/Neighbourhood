@@ -27,6 +27,7 @@ __decorate([
     __metadata("design:type", String)
 ], Messages.prototype, "messageTitle", void 0);
 __decorate([
+    sequelize_typescript_1.AllowNull,
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.BLOB),
     __metadata("design:type", Blob)
 ], Messages.prototype, "image", void 0);
@@ -36,7 +37,7 @@ __decorate([
 ], Messages.prototype, "description", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.STRING),
-    (0, sequelize_typescript_1.HasOne)(() => residents_model_1.Residents, { foreignKey: { name: 'residentId' }, sourceKey: 'createdBy', as: 'Residents' }),
+    (0, sequelize_typescript_1.HasOne)(() => residents_model_1.Residents, { foreignKey: { name: 'residentId' }, sourceKey: 'createdBy', as: 'OneToOneResident' }),
     __metadata("design:type", Number)
 ], Messages.prototype, "createdBy", void 0);
 __decorate([
@@ -49,7 +50,7 @@ __decorate([
 ], Messages.prototype, "type", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)(sequelize_typescript_1.DataType.INTEGER),
-    (0, sequelize_typescript_1.HasMany)(() => Messages, { foreignKey: { name: 'messageId' }, sourceKey: 'messageId', as: 'Messages' }),
+    (0, sequelize_typescript_1.HasMany)(() => Messages, { foreignKey: { name: 'messageId' }, sourceKey: 'replyId', as: 'OneToManyResident' }),
     __metadata("design:type", Number)
 ], Messages.prototype, "replyId", void 0);
 exports.Messages = Messages = __decorate([
